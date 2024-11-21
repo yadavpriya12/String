@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    let input = "A man, a plan, a canal, Panama!";
+
+let cleanedString = "";
+let length = 0;
+
+
+while (input[length] !== undefined) {
+    length++;
+}
+
+
+for (let i = 0; i < length; i++) {
+    let char = input[i];
+    let ascii = input.charCodeAt(i);
+
+    
+    if ((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122) || (ascii >= 48 && ascii <= 57)) {
+        if (ascii >= 65 && ascii <= 90) {
+            cleanedString += String.fromCharCode(ascii + 32);
+        } else {
+            cleanedString += char;
+        }
+    }
+}
+
+
+let start = 0;
+let end = cleanedString.length - 1;
+let isPalindrome = true;
+
+while (start < end) {
+    if (cleanedString[start] !== cleanedString[end]) {
+        isPalindrome = false;
+        break;
+    }
+    start++;
+    end--;
+}
+
+if (isPalindrome) {
+    console.log("true");
+} else {
+    console.log("false");
+}
+
+  </script>  
+</body>
+</html>

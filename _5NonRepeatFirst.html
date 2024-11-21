@@ -1,0 +1,35 @@
+<script>
+    let input = "swiss";
+let chars = [];
+let counts = [];
+
+for (let i = 0; i < input.length; i++) {
+    let found = false;
+
+    for (let j = 0; j < chars.length; j++) {
+        if (chars[j] === input[i]) {
+            counts[j]++; 
+            found = true;
+            break;
+        }
+    }
+
+  
+    if (!found) {
+        chars[chars.length] = input[i];
+        counts[counts.length] = 1;
+    }
+}
+
+let result = "No non-repeated character";
+for (let i = 0; i < counts.length; i++) {
+    if (counts[i] === 1) {
+        result = chars[i];
+        break;
+    }
+}
+
+
+console.log(result);
+
+</script>
